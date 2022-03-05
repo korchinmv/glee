@@ -1,0 +1,114 @@
+.header {
+  padding: 50px 0;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+
+  &__item:not(:last-child) {
+    margin-right: 32px;
+  }
+
+  &__link {
+    font-family: Rubik-Medium;
+    font-weight: 500;
+    transition: color 0.2s;
+
+    &:hover {
+      color: rgba($blue-300, 0.7);
+    }
+  }
+}
+
+.user-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: $beige-200;
+  width: 180px;
+  height: 50px;
+  border-radius: 30px;
+
+  &__link {
+    padding: 18px 25px 13px 25px;
+    position: relative;
+    display: inherit;
+
+    &--line::before {
+      content: "";
+      position: absolute;
+      width: 1px;
+      height: 32px;
+      background-color: $beige-100;
+      top: 10px;
+      right: 75px;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: $blue-300;
+      margin: 0 auto;
+    }
+  }
+
+  &__num {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $white;
+    line-height: 16px;
+    text-align: center;
+    font-size: 10px;
+    top: 10px;
+    right: 16px;
+  }
+}
+
+.user-wrapper {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $grey;
+  display: flex;
+  align-items: center;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    fill: $blue-300;
+    margin: 0 auto;
+  }
+
+  &--search {
+    svg {
+      fill: $blue-300;
+    }
+  }
+
+  &--menu {
+    background-color: $blue-100;
+
+    svg {
+      fill: $white;
+    }
+  }
+}

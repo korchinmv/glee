@@ -1,0 +1,15 @@
+@mixin font-face($font-family, $url, $weight) {
+  @font-face {
+    font-family: "#{$font-family}";
+    src: url("../fonts/#{$url}.woff2") format("woff2"), url("../fonts/#{$url}.woff") format("woff");
+    font-weight: #{$weight};
+    font-display: swap;
+    font-style: normal;
+  }
+}
+
+@include font-face(DMSans-Bold, DMSans-Bold, 700);
+@include font-face(DMSans-Medium, DMSans-Medium, 500);
+@include font-face(DMSans-Regular, DMSans-Regular, 400);
+@include font-face(Rubik-Medium, Rubik-Medium, 500);
+@include font-face(Rubik-Regular, Rubik-Regular, 400);
