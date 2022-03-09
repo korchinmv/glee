@@ -42,6 +42,25 @@ body {
   padding: 12px 15px;
   transition: background-color 0.3s;
 
+  &--main-slider {
+    padding: 23px 100px 23px 27px;
+    font-family: Rubik-Medium;
+    font-weight: 500;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url(../images/icons/icon-arrow.svg);
+      width: 22px;
+      height: 9px;
+      right: 18px;
+      top: 28px;
+    }
+  }
+
   &:hover {
     background-color: $blue-300;
   }

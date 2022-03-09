@@ -1,0 +1,68 @@
+.main-slider {
+  &__wrapper {
+    background-color: $beige-200;
+    padding-bottom: 45px;
+    // padding: 100px 185px 90px;
+  }
+
+  &__inner {
+    margin: 225px 0 0 300px;
+  }
+
+  &__title {
+    font-size: 72px;
+    color: $blue-800;
+    max-width: 470px;
+    font-family: Rubik-Medium;
+    font-weight: 500;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    max-width: 370px;
+    color: $blue-300;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    display: flex !important;
+    justify-content: space-between;
+  }
+
+  &__img {
+    margin: 100px 185px 22px 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    object-fit: contain;
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+
+    li {
+      margin: 0 9px;
+
+      button {
+        font-family: Rubik-Medium;
+        font-weight: 500;
+        background-color: $beige-150;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+      }
+
+      &.slick-active {
+        button {
+          color: $blue-800;
+          background-color: $white;
+        }
+      }
+    }
+  }
+}
