@@ -1,0 +1,14 @@
+.special {
+  padding: 185px 0 100px;
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}

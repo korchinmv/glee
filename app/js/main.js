@@ -6,4 +6,6 @@ $(function () {
 
   });
 
+
+  var mixer = mixitup('.product-week__wrapper');
 });

@@ -1,0 +1,19 @@
+<svg>
+   <use xlink:href="images/sprite.svg#icon-search"></use>
+</svg>
+
+ &__img {
+    object-fit: contain;
+  }
+
+<ul>
+  <li>
+    <article>
+         Карточка товара и тд 
+    </article>
+  </li>
+</ul>
+
+style="background-image: url('images/content/categories/acces.jpg')"
+
+<span class="sr-only">Избранные товары</span>

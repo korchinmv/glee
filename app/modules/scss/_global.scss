@@ -65,3 +65,155 @@ body {
     background-color: $blue-300;
   }
 }
+
+.title {
+  font-family: DMSans-Bold;
+  font-weight: 700;
+  font-size: 36px;
+  color: $dark;
+  margin-bottom: 45px;
+}
+
+.filter-mix {
+  display: flex;
+  justify-content: center;
+
+  &__item:not(:last-child) {
+    margin-right: 25px;
+  }
+
+  &__link {
+    font-family: DMSans-Bold;
+    font-weight: 700;
+    color: $grey-300;
+  }
+}
+
+.mixitup-control-active {
+  color: $dark;
+}
+
+.product-card {
+  height: 380px;
+  box-shadow: 0px 6px 47px 3px rgba($dark-500, 0.05);
+  border-radius: 10px;
+  padding: 25px 15px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $white;
+  position: relative;
+  overflow: hidden;
+
+  &__link-box {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    transform: translateY(500%);
+    transition: transform 0.3s;
+    right: 0;
+    left: 0;
+    top: 50%;
+  }
+
+  &:hover {
+    .product-card__link-box {
+      transform: translateY(0);
+    }
+  }
+
+  &__link {
+    width: 45px;
+    height: 45px;
+    background-color: $white;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: $blue-100;
+
+      svg {
+        fill: $white;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: $blue-100;
+      transition: fill 0.2s;
+    }
+  }
+
+  &__img {
+    margin: 0 auto;
+    object-fit: contain;
+    margin: auto auto 40px auto;
+  }
+
+  &__title {
+    margin: auto 0 15px 0;
+    font-family: DMSans-Medium;
+    font-weight: 500;
+  }
+
+  &__price {
+    font-family: DMSans-Bold;
+    font-weight: 700;
+    color: $blue-100;
+  }
+}
+
+.special-card {
+  display: flex;
+  justify-content: space-between;
+  background-color: $beige-50;
+  padding: 100px 145px 100px 390px;
+  position: relative;
+
+  &__img {
+    position: absolute;
+    top: -95px;
+    left: 130px;
+  }
+
+  &__title {
+    font-family: DMSans-Bold;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.2;
+    color: $blue-700;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    color: $blue-700;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    max-width: 340px;
+  }
+
+  &__btn {
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid $blue-100;
+    border-radius: 5px;
+    color: $blue-300;
+    font-size: 15px;
+    font-family: DMSans-Medium;
+    font-weight: 500;
+    transition: color 0.2s, background-color 0.2s;
+    padding-right: 70px;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}

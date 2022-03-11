@@ -1,0 +1,68 @@
+.support {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    background-color: $beige;
+  }
+
+  &__item {
+    padding: 45px 145px 45px 220px;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      height: 100%;
+      width: 1px;
+      background-color: $grey-200;
+      right: 0;
+      top: 0;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 60px;
+      left: 140px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    &--icon-time::before {
+      background-image: url(../images/icons/icon-time.svg);
+      width: 51px;
+      height: 53px;
+    }
+
+    &--icon-car::before {
+      background-image: url(../images/icons/icon-car.svg);
+      width: 54px;
+      height: 36px;
+    }
+
+    &--icon-payment::before {
+      background-image: url(../images/icons/icon-payment.svg);
+      width: 54px;
+      height: 52px;
+    }
+  }
+
+  &__title {
+    font-family: DMSans-Bold;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2.2;
+    @include line-clamp(3);
+  }
+
+  &__text {
+    font-family: DMSans-Regular;
+    font-weight: 400;
+    color: $grey-500;
+    line-height: 1.8;
+    max-width: 209px;
+    @include line-clamp(3);
+  }
+}

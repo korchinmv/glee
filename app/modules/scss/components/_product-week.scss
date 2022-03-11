@@ -1,0 +1,25 @@
+.product-week {
+  padding: 70px 190px;
+  text-align: center;
+
+  &__container {
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+
+  &__filter {
+    margin-bottom: 70px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  &__item {
+    width: 270px;
+    margin: 20px 15px;
+  }
+}
