@@ -61,6 +61,36 @@ body {
     }
   }
 
+  &--special {
+    background-color: transparent;
+    border: 1px solid $blue-100;
+    border-radius: 5px;
+    color: $blue-300;
+    font-size: 15px;
+    font-family: DMSans-Medium;
+    font-weight: 500;
+    transition: color 0.2s, background-color 0.2s;
+    width: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    svg {
+      fill: $blue-300;
+      width: 22px;
+      height: 9px;
+      transition: fill 0.2s;
+    }
+
+    &:hover {
+      color: $white;
+
+      svg {
+        fill: $white;
+      }
+    }
+  }
+
   &:hover {
     background-color: $blue-300;
   }
@@ -177,6 +207,8 @@ body {
   background-color: $beige-50;
   padding: 100px 145px 100px 390px;
   position: relative;
+  height: 100%;
+  max-width: 870px;
 
   &__img {
     position: absolute;
@@ -191,6 +223,7 @@ body {
     line-height: 1.2;
     color: $blue-700;
     margin-bottom: 30px;
+    @include line-clamp(2);
   }
 
   &__text {
@@ -198,22 +231,6 @@ body {
     margin-bottom: 30px;
     line-height: 1.8;
     max-width: 340px;
-  }
-
-  &__btn {
-    display: inline-block;
-    background-color: transparent;
-    border: 1px solid $blue-100;
-    border-radius: 5px;
-    color: $blue-300;
-    font-size: 15px;
-    font-family: DMSans-Medium;
-    font-weight: 500;
-    transition: color 0.2s, background-color 0.2s;
-    padding-right: 70px;
-
-    &:hover {
-      color: $white;
-    }
+    @include line-clamp(5);
   }
 }

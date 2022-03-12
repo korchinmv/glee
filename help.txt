@@ -17,3 +17,5 @@
 style="background-image: url('images/content/categories/acces.jpg')"
 
 <span class="sr-only">Избранные товары</span>
+
+height: 100%; - задавать флекс элементам для того что бы была однинаковая высота независимо от содержимого элемента
