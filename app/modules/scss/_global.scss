@@ -1,236 +1,272 @@
 html,
 body {
-  height: 100%;
+	height: 100%;
 }
 
 .main {
-  flex-grow: 1;
+	flex-grow: 1;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  font-size: 16px;
-  background-color: $white;
-  color: $blue-300;
-  font-family: Rubik-Regular;
-  font-weight: 400;
+	display: flex;
+	flex-direction: column;
+	font-size: 16px;
+	background-color: $white;
+	color: $blue-300;
+	font-family: Rubik-Regular;
+	font-weight: 400;
 }
 
 .container {
-  max-width: 1800px;
-  padding: 0 15px;
-  margin: 0 auto;
+	max-width: 1800px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.product-container {
+	max-width: 1170px;
+	margin: 0 auto;
 }
 
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow: hidden;
 }
 
 .btn {
-  background-color: $blue-100;
-  color: $white;
-  padding: 12px 15px;
-  transition: background-color 0.3s;
+	background-color: $blue-100;
+	color: $white;
+	padding: 12px 15px;
+	transition: background-color 0.3s;
 
-  &--main-slider {
-    padding: 23px 100px 23px 27px;
-    font-family: Rubik-Medium;
-    font-weight: 500;
-    font-size: 15px;
-    display: inline-block;
-    position: relative;
+	&--main-slider {
+		padding: 23px 100px 23px 27px;
+		font-family: Rubik-Medium;
+		font-weight: 500;
+		font-size: 15px;
+		display: inline-block;
+		position: relative;
 
-    &::after {
-      content: "";
-      position: absolute;
-      background-image: url(../images/icons/icon-arrow.svg);
-      width: 22px;
-      height: 9px;
-      right: 18px;
-      top: 28px;
-    }
-  }
+		&::after {
+			content: "";
+			position: absolute;
+			background-image: url(../images/icons/icon-arrow.svg);
+			width: 22px;
+			height: 9px;
+			right: 18px;
+			top: 28px;
+		}
+	}
 
-  &--special {
-    background-color: transparent;
-    border: 1px solid $blue-100;
-    border-radius: 5px;
-    color: $blue-300;
-    font-size: 15px;
-    font-family: DMSans-Medium;
-    font-weight: 500;
-    transition: color 0.2s, background-color 0.2s;
-    width: 160px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+	&--special {
+		background-color: transparent;
+		border: 1px solid $blue-100;
+		border-radius: 5px;
+		color: $blue-300;
+		font-size: 15px;
+		font-family: DMSans-Medium;
+		font-weight: 500;
+		transition: color 0.2s, background-color 0.2s;
+		width: 160px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
 
-    svg {
-      fill: $blue-300;
-      width: 22px;
-      height: 9px;
-      transition: fill 0.2s;
-    }
+		svg {
+			fill: $blue-300;
+			width: 22px;
+			height: 9px;
+			transition: fill 0.2s;
+		}
 
-    &:hover {
-      color: $white;
+		&:hover {
+			color: $white;
 
-      svg {
-        fill: $white;
-      }
-    }
-  }
+			svg {
+				fill: $white;
+			}
+		}
+	}
 
-  &:hover {
-    background-color: $blue-300;
-  }
+	&:hover {
+		background-color: $blue-300;
+	}
 }
 
 .title {
-  font-family: DMSans-Bold;
-  font-weight: 700;
-  font-size: 36px;
-  color: $dark;
-  margin-bottom: 45px;
+	font-family: DMSans-Bold;
+	font-weight: 700;
+	font-size: 36px;
+	color: $dark;
+	margin-bottom: 45px;
 }
 
 .filter-mix {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 
-  &__item:not(:last-child) {
-    margin-right: 25px;
-  }
+	&__item:not(:last-child) {
+		margin-right: 25px;
+	}
 
-  &__link {
-    font-family: DMSans-Bold;
-    font-weight: 700;
-    color: $grey-300;
-  }
+	&__btn {
+		font-family: DMSans-Bold;
+		font-weight: 700;
+		color: $grey-300;
+	}
 }
 
 .mixitup-control-active {
-  color: $dark;
+	color: $dark;
 }
 
 .product-card {
-  height: 380px;
-  box-shadow: 0px 6px 47px 3px rgba($dark-500, 0.05);
-  border-radius: 10px;
-  padding: 25px 15px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: $white;
-  position: relative;
-  overflow: hidden;
+	height: 380px;
+	box-shadow: 0px 6px 47px 3px rgba($dark-500, 0.05);
+	border-radius: 10px;
+	padding: 25px 15px 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: $white;
+	position: relative;
+	overflow: hidden;
 
-  &__link-box {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    transform: translateY(500%);
-    transition: transform 0.3s;
-    right: 0;
-    left: 0;
-    top: 50%;
-  }
+	&__link-box {
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		transform: translateY(500%);
+		transition: transform 0.3s;
+		right: 0;
+		left: 0;
+		top: 50%;
+	}
 
-  &:hover {
-    .product-card__link-box {
-      transform: translateY(0);
-    }
-  }
+	&:hover {
+		.product-card__link-box {
+			transform: translateY(0);
+		}
+	}
 
-  &__link {
-    width: 45px;
-    height: 45px;
-    background-color: $white;
-    border-radius: 50%;
-    transition: background-color 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	&__link {
+		width: 45px;
+		height: 45px;
+		background-color: $white;
+		border-radius: 50%;
+		transition: background-color 0.2s;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
-    &:hover {
-      background-color: $blue-100;
+		&:hover {
+			background-color: $blue-100;
 
-      svg {
-        fill: $white;
-      }
-    }
+			svg {
+				fill: $white;
+			}
+		}
 
-    &:not(:last-child) {
-      margin-right: 15px;
-    }
+		&:not(:last-child) {
+			margin-right: 15px;
+		}
 
-    svg {
-      width: 20px;
-      height: 20px;
-      fill: $blue-100;
-      transition: fill 0.2s;
-    }
-  }
+		svg {
+			width: 20px;
+			height: 20px;
+			fill: $blue-100;
+			transition: fill 0.2s;
+		}
+	}
 
-  &__img {
-    margin: 0 auto;
-    object-fit: contain;
-    margin: auto auto 40px auto;
-  }
+	&__img {
+		margin: 0 auto;
+		object-fit: contain;
+		margin: auto auto 40px auto;
+	}
 
-  &__title {
-    margin: auto 0 15px 0;
-    font-family: DMSans-Medium;
-    font-weight: 500;
-  }
+	&__title {
+		margin: auto 0 15px 0;
+		font-family: DMSans-Medium;
+		font-weight: 500;
+	}
 
-  &__price {
-    font-family: DMSans-Bold;
-    font-weight: 700;
-    color: $blue-100;
-  }
+	&__price {
+		font-family: DMSans-Bold;
+		font-weight: 700;
+		color: $blue-100;
+	}
 }
 
 .special-card {
-  display: flex;
-  justify-content: space-between;
-  background-color: $beige-50;
-  padding: 100px 145px 100px 390px;
-  position: relative;
-  height: 100%;
-  max-width: 870px;
+	display: flex;
+	justify-content: space-between;
+	background-color: $beige-50;
+	padding: 100px 145px 100px 390px;
+	position: relative;
+	height: 100%;
+	max-width: 870px;
 
-  &__img {
-    position: absolute;
-    top: -95px;
-    left: 130px;
-  }
+	&__img {
+		position: absolute;
+		top: -95px;
+		left: 130px;
+	}
 
-  &__title {
-    font-family: DMSans-Bold;
-    font-weight: 700;
-    font-size: 26px;
-    line-height: 1.2;
-    color: $blue-700;
-    margin-bottom: 30px;
-    @include line-clamp(2);
-  }
+	&__title {
+		font-family: DMSans-Bold;
+		font-weight: 700;
+		font-size: 26px;
+		line-height: 1.2;
+		color: $blue-700;
+		margin-bottom: 30px;
+		@include line-clamp(2);
+	}
 
-  &__text {
-    color: $blue-700;
-    margin-bottom: 30px;
-    line-height: 1.8;
-    max-width: 340px;
-    @include line-clamp(5);
-  }
+	&__text {
+		color: $blue-700;
+		margin-bottom: 30px;
+		line-height: 1.8;
+		max-width: 340px;
+		@include line-clamp(5);
+	}
+}
+
+.design-card {
+	min-height: 245px;
+	width: 370px;
+	padding: 45px 35px;
+	border-radius: 5px 5px 0 0;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: relative;
+
+	&__link {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
+	}
+
+	&__title {
+		max-width: 157px;
+		margin-bottom: 15px;
+		@include line-clamp(3);
+	}
+
+	&__type {
+		color: $blue-100;
+		font-family: DMSans-Bold;
+	}
 }

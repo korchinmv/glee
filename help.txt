@@ -1,8 +1,4 @@
-<svg>
-   <use xlink:href="images/sprite.svg#icon-search"></use>
-</svg>
-
- &__img {
+&__img {
     object-fit: contain;
   }
 
@@ -13,9 +9,5 @@
     </article>
   </li>
 </ul>
-
-style="background-image: url('images/content/categories/acces.jpg')"
-
-<span class="sr-only">Избранные товары</span>
 
 height: 100%; - задавать флекс элементам для того что бы была однинаковая высота независимо от содержимого элемента

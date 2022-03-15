@@ -1,0 +1,22 @@
+.design {
+	padding: 100px 0 85px;
+
+	&__title {
+		text-align: center;
+	}
+
+	&__filter {
+		margin-bottom: 75px;
+	}
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin: 0 -15px;
+	}
+
+	&__item {
+		margin: 0 15px 35px 15px;
+	}
+}

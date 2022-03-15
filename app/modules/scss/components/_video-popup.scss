@@ -1,20 +1,21 @@
 .video-popup {
-  position: relative;
-  &__img {
-    background-repeat: no-repeat;
-    object-fit: contain;
-    background-position: center center;
-  }
+	position: relative;
+	&__img {
+		background-repeat: no-repeat;
+		object-fit: contain;
+		background-position: center center;
+	}
 
-  &__link {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: transform 0.3s;
+	&__link {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		transition: transform 0.3s;
 
-    &:hover {
-      transform: scale(1.2) translate(-43%, -50%);
-    }
-  }
+		&:hover {
+			transform: scale(1.2) translate(-43%, -50%);
+		}
+	}
+	color: #fff;
 }
