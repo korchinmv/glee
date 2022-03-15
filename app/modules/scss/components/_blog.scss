@@ -1,0 +1,55 @@
+.blog {
+	padding-top: 120px;
+
+	&__title-box {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: 45px;
+	}
+
+	&__link {
+		font-family: DMSans-Bold;
+		color: $dark-500;
+		padding-right: 25px;
+		position: relative;
+		transition: color 0.2s;
+
+		&:hover {
+			color: rgba($dark-500, 0.6);
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			background-image: url(../images/icons/icon-arrow-small.svg);
+			background-repeat: no-repeat;
+			background-position: center;
+			width: 7px;
+			height: 12px;
+			right: 0;
+			top: 4px;
+		}
+	}
+
+	&__list {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__item {
+		max-width: 370px;
+	}
+}
+
+.partners {
+	background-color: $beige;
+	padding: 260px 0 88px;
+	margin-top: -181px;
+
+	&__list {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+}
