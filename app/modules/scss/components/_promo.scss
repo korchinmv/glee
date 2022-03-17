@@ -1,0 +1,136 @@
+.promo {
+	padding: 120px 0;
+
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__img {
+		margin-right: 30px;
+		object-fit: contain;
+	}
+
+	&__box {
+		max-width: 570px;
+	}
+
+	&__top-inner {
+		display: flex;
+		align-items: flex-end;
+		margin-bottom: 40px;
+	}
+
+	&__years {
+		font-family: DMSans-Bold;
+		font-weight: 700;
+		font-size: 140px;
+		line-height: 0.8;
+		color: $blue-100;
+		display: block;
+		margin-right: 30px;
+	}
+
+	&__words {
+		display: block;
+		line-height: 1.8;
+	}
+
+	&__title {
+		margin-bottom: 20px;
+	}
+
+	&__text {
+		line-height: 1.8;
+		margin-bottom: 65px;
+	}
+
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+		padding-top: 40px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			width: 500px;
+			height: 3px;
+			display: block;
+			background-color: $grey-100;
+			top: 0;
+			left: 15px;
+		}
+	}
+
+	&__item {
+		width: 170px;
+		padding-left: 70px;
+		font-family: DMSans-Bold;
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 0.7;
+		color: $blue-800;
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 5px;
+			left: 15px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+
+		&--write-icon::before {
+			background-image: url(../images/icons/icon-write.svg);
+			width: 36px;
+			height: 37px;
+		}
+
+		&--mouthpiece-icon::before {
+			background-image: url(../images/icons/icon-mouthpiece.svg);
+			width: 43px;
+			height: 39px;
+		}
+
+		&--medal-icon::before {
+			background-image: url(../images/icons/icon-medal.svg);
+			width: 41px;
+			height: 40px;
+		}
+
+		&:nth-child(1)::after {
+			content: "";
+			position: absolute;
+			width: 2px;
+			height: 80px;
+			display: block;
+			background-color: $grey-100;
+			top: -15px;
+			right: -20px;
+		}
+
+		&:nth-child(3)::after {
+			content: "";
+			position: absolute;
+			width: 2px;
+			height: 80px;
+			display: block;
+			background-color: $grey-100;
+			top: -15px;
+			left: -20px;
+		}
+
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+	}
+
+	&__item-name {
+		font-size: 16px;
+		color: $grey-600;
+	}
+}

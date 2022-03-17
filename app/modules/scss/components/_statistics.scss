@@ -1,0 +1,61 @@
+.statistics {
+	padding: 90px 0 80px;
+	background-color: $beige-200;
+	color: $blue-800;
+
+	&__list {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	&__item {
+		max-width: 190px;
+		width: 100%;
+		text-align: center;
+		font-family: DMSans-Bold;
+		font-weight: 700;
+		font-size: 36px;
+		line-height: 1;
+		padding-top: 80px;
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 60px;
+			width: 73px;
+			height: 59px;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+
+		&--monitor-icon::before {
+			background-image: url(../images/icons/icon-monitor-ellipse.svg);
+		}
+
+		&--car-icon::before {
+			background-image: url(../images/icons/icon-car-ellipse.svg);
+		}
+
+		&--phone-icon::before {
+			background-image: url(../images/icons/icon-phone-ellipse.svg);
+		}
+
+		&--medal-icon::before {
+			background-image: url(../images/icons/icon-medal-ellipse.svg);
+		}
+
+		&:not(:last-child) {
+			margin-right: 120px;
+		}
+	}
+
+	&__name {
+		font-size: 18px;
+		display: block;
+		padding-top: 20px;
+	}
+}
