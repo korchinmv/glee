@@ -41,11 +41,13 @@ body {
 	overflow: hidden;
 }
 
+//PAGE ELEMENTS//
 .btn {
 	background-color: $blue-100;
 	color: $white;
 	padding: 12px 15px;
 	transition: background-color 0.3s;
+	border: 2px solid transparent;
 
 	&--main-slider {
 		padding: 23px 100px 23px 27px;
@@ -96,6 +98,18 @@ body {
 		}
 	}
 
+	&--transparent {
+		background-color: transparent;
+		border: 2px solid $blue-100;
+		color: $blue-700;
+		transition: color 0.2s, background-color 0.2s;
+
+		&:hover {
+			color: $white;
+			border: 2px solid $blue-300;
+		}
+	}
+
 	&:hover {
 		background-color: $blue-300;
 	}
@@ -127,6 +141,58 @@ body {
 	color: $dark;
 }
 
+.breadcrumbs-block {
+	padding: 30px 0;
+	text-align: center;
+	background-color: $blue-50;
+
+	&__title {
+		font-family: Rubik-Regular;
+		font-weight: 400;
+		font-size: 36px;
+		line-height: 1;
+		color: $blue-850;
+		margin-bottom: 15px;
+	}
+}
+
+.breadcrumbs {
+	display: inline-flex;
+	justify-content: center;
+	position: relative;
+
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+		padding-left: 14px;
+		position: relative;
+
+		&:not(:last-child) {
+			margin-right: 7px;
+		}
+
+		&::before {
+			content: "/";
+			position: absolute;
+			width: 9px;
+			height: 10px;
+			left: 0;
+			top: 0;
+		}
+
+		&:first-child {
+			padding-left: 0;
+
+			&::before {
+				display: none;
+			}
+		}
+	}
+}
+
+//CARDS//
 .product-card {
 	height: 380px;
 	box-shadow: 0px 6px 47px 3px rgba($dark-500, 0.05);

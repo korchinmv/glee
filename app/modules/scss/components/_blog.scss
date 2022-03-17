@@ -1,5 +1,6 @@
 .blog {
 	padding-top: 120px;
+	margin-bottom: -181px;
 
 	&__title-box {
 		display: flex;
@@ -45,11 +46,14 @@
 .partners {
 	background-color: $beige;
 	padding: 260px 0 88px;
-	margin-top: -181px;
 
 	&__list {
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
+	}
+
+	&--small {
+		padding: 88px 0;
 	}
 }
