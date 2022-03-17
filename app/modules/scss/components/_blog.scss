@@ -1,6 +1,5 @@
 .blog {
 	padding-top: 120px;
-	margin-bottom: -181px;
 
 	&__title-box {
 		display: flex;
@@ -36,6 +35,7 @@
 	&__list {
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: -181px;
 	}
 
 	&__item {
