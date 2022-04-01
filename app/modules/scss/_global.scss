@@ -41,6 +41,14 @@ body {
 	overflow: hidden;
 }
 
+.checkbox-hidden {
+	width: 1px;
+	height: 1px;
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+}
+
 //PAGE ELEMENTS//
 .btn {
 	background-color: $blue-100;
@@ -497,5 +505,118 @@ body {
 			height: 20px;
 			fill: $grey-400;
 		}
+	}
+}
+
+//FILTERS//
+.filter-category {
+	width: 270px;
+
+	&__label {
+		cursor: pointer;
+		display: block;
+
+		&:not(:last-child) {
+			margin-bottom: 5px;
+		}
+	}
+
+	&__input {
+		&:checked + .filter-category__checkbox {
+			background-color: $blue-50;
+			color: $blue-800;
+		}
+	}
+
+	&__checkbox {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: transparent;
+		padding: 13px 15px;
+		border-radius: 5px;
+
+		svg {
+			width: 6px;
+			height: 10px;
+			fill: $blue-800;
+		}
+	}
+}
+
+.filter-brand {
+	width: 270px;
+
+	&__label {
+		cursor: pointer;
+		display: block;
+
+		&:not(:last-child) {
+			margin-bottom: 5px;
+		}
+	}
+
+	&__input {
+		&:checked + .filter-brand__checkbox {
+			background-color: $blue-50;
+			color: $blue-800;
+		}
+	}
+
+	&__checkbox {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: transparent;
+		padding: 13px 15px;
+		border-radius: 5px;
+
+		svg {
+			width: 6px;
+			height: 10px;
+			fill: $blue-800;
+		}
+	}
+}
+
+.filter-price {
+	&__label {
+		display: flex;
+		justify-content: space-between;
+		font-size: 14px;
+		padding: 0 8px;
+	}
+
+	.irs--flat .irs-bar {
+		top: 5px;
+		height: 4px;
+		background-color: $blue-100;
+	}
+
+	.irs--flat .irs-line {
+		top: 5px;
+		height: 4px;
+		background-color: $blue-75;
+	}
+
+	.irs--flat .irs-handle > i:first-child {
+		position: absolute;
+		display: block;
+		top: -22px;
+		left: 50%;
+		width: 15px;
+		height: 15px;
+		background-color: $blue-100;
+	}
+
+	.irs--flat .irs-from,
+	.irs--flat .irs-to,
+	.irs--flat .irs-single {
+		display: none;
+	}
+
+	.irs--flat .irs-min,
+	.irs--flat .irs-max {
+		display: none;
 	}
 }
