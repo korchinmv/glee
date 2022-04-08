@@ -1,0 +1,56 @@
+.related-products {
+	&__title {
+		margin-bottom: 60px;
+	}
+
+	&__list {
+		display: flex;
+		position: relative;
+		height: 390px;
+	}
+
+	&__slick-prev,
+	&__slick-next {
+		width: 50px;
+		height: 50px;
+		border: 2px solid $blue-100;
+		border-radius: 5px;
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transition: border-color 0.3s;
+		z-index: 1;
+		top: -108px;
+
+		&:hover {
+			border-color: $blue-700;
+
+			svg {
+				fill: $blue-700;
+				transition: fill 0.3s;
+			}
+		}
+
+		svg {
+			width: 22px;
+			height: 9px;
+			fill: $blue-100;
+		}
+	}
+
+	&__slick-next {
+		right: 0;
+	}
+
+	&__slick-prev {
+		right: 70px;
+		svg {
+			transform: rotate(180deg);
+		}
+	}
+
+	.slick-disabled {
+		border-color: $blue-50;
+	}
+}

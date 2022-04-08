@@ -147,6 +147,11 @@ body {
 		padding: 15px 50px;
 	}
 
+	&--tab {
+		border-radius: 5px;
+		padding: 15px 70px;
+	}
+
 	&:hover {
 		background-color: $blue-300;
 	}
@@ -276,6 +281,105 @@ body {
 			background-color: $blue-50;
 		}
 	}
+}
+
+.product-info {
+	&__item:not(:last-child) {
+		margin-bottom: 10px;
+	}
+}
+
+//STEPPER//
+.stepper {
+	position: relative;
+	z-index: 1;
+
+	&::after,
+	&::before {
+		content: "";
+		position: absolute;
+		display: block;
+		height: 50px;
+		width: 1px;
+		background-color: $blue-700;
+		z-index: 2;
+	}
+
+	&::before {
+		right: 50px;
+		top: 2px;
+	}
+
+	&::after {
+		left: 50px;
+		top: 2px;
+	}
+}
+
+.jq-number__field {
+	width: 148px;
+	border: 1px solid $blue-700;
+	transform: translateY(1px);
+}
+
+.jq-number__field input {
+	width: 100%;
+	height: 50px;
+	font-size: 16px;
+	color: $dark;
+	text-align: center;
+}
+
+.jq-number {
+	padding: 0;
+	position: relative;
+}
+
+.jq-number__spin {
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+
+.jq-number__spin.minus {
+	left: 19px;
+}
+
+.jq-number__spin.plus {
+	right: 19px;
+}
+
+.jq-number__spin:after {
+	content: "";
+	position: absolute;
+	top: 6px;
+	left: 0;
+	width: 12px;
+	height: 1px;
+	background-color: $dark;
+}
+
+.jq-number__spin.minus::after {
+	left: 0;
+	top: 6px;
+}
+
+.jq-number__spin.plus::after {
+	right: 15px;
+	top: 6px;
+}
+
+.jq-number__spin.plus::before {
+	content: "";
+	position: absolute;
+	width: 1px;
+	height: 12px;
+	background-color: $dark;
+	top: 0;
+	left: 6px;
 }
 
 //CARDS//

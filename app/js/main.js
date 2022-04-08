@@ -1,4 +1,36 @@
 $(function () {
+	$('.tabs__top-item').on('click', function (e) {   //ТАБЫ//
+		e.preventDefault();  //Отключаем нажатие (переход) по ссылке//
+		$('.tabs__top-item').removeClass('tabs__top-item--active');
+		$(this).addClass('tabs__top-item--active');
+
+		$('.tabs__content-item').removeClass('tabs__content-item--active');
+		$($(this).attr('href')).addClass('tabs__content-item--active');
+	});
+
+	$('.related-products__list').slick({
+		slidesToShow: 4,
+		infinite: 'false',
+		prevArrow: '<button type="button" class="related-products__slick-prev"><svg><use xlink:href="images/sprite.svg#icon-arrow"></use></svg></button>',
+		nextArrow: '<button type="button" class="related-products__slick-next"><svg><use xlink:href="images/sprite.svg#icon-arrow"></use></svg></button>',
+	});
+
+	$('.product-slide__thumb').slick({
+		asNavFor: '.product-slide__big',
+		slidesToShow: 3,
+		slidesToScroll: 1,
+		focusOnSelect: true,
+		vertical: true,
+		draggable: false,
+		arrows: false,
+	});
+
+	$('.product-slide__big').slick({
+		asNavFor: '.product-slide__thumb',
+		arrows: false,
+		fade: true,
+		draggable: false,
+	});
 
 	$('.filter-price__input').ionRangeSlider({
 		type: "double",
@@ -36,12 +68,15 @@ $(function () {
 		$('.pagination').removeClass('pagination--list');
 	});
 
+	$('.stepper').styler();
+
 	$('.star').rateYo({
 		normalFill: "#d6d6d6",
 		ratedFill: "#ffcc00",
+		numStars: '5',
+		fullStar: 'true',
 		starWidth: "11px",
-		readOnly: true,
-		spacing: "8px",
+		readOnly: 'true',
 		"starSvg": `<?xml version="1.0" encoding="iso-8859-1"?>
 		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			viewBox="0 0 47.94 47.94" style="enable-background:new 0 0 47.94 47.94;" xml:space="preserve">
