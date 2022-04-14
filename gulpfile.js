@@ -24,7 +24,7 @@ function browsersync() {
 
 function styles() {
 	return src('app/modules/scss/style.scss', { sourcemaps: true })
-		.pipe(scss({ outputStyle: 'compressed' }))
+		.pipe(scss({ outputStyle: 'compressed' }).on('error', scss.logError))
 		.pipe(concat('style.min.css'))
 		.pipe(autoprefixer({
 			overrideBrowserslist: ['last 10 versions'],
