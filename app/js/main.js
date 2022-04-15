@@ -1,4 +1,6 @@
 $(function () {
+
+
 	$('.tabs__top-item').on('click', function (e) {   //ТАБЫ//
 		e.preventDefault();  //Отключаем нажатие (переход) по ссылке//
 		$('.tabs__top-item').removeClass('tabs__top-item--active');
@@ -101,3 +103,36 @@ $(function () {
 	var mixer1 = mixitup(containerEl1, config);
 	var mixer2 = mixitup(containerEl2, config);
 });
+
+let center = [55.60870614221721, 37.71377349545635];
+
+function init() {
+	let map = new ymaps.Map('map', {
+		center: center,
+		zoom: 16,
+	});
+
+	//подключаем кастомную метку на карты
+	let placemark = new ymaps.Placemark(center, {
+		balloonContentHeader: 'Хедер балуна',
+		balloonContentBody: 'Боди балуна',
+		balloonContentFooter: 'Подвал'
+	}, {
+		iconLayout: 'default#image',
+		iconImageHref: '../images/icons/icon-location-dot.svg',
+		iconImageSize: [40, 40], //размер метки на карте
+		iconImageOffset: [-20, -40]  //точные координаты иконки подстраиваем тут
+	});
+
+	map.controls.remove('geolocationControl'); // удаляем геолокацию
+	map.controls.remove('searchControl'); // удаляем поиск
+	map.controls.remove('trafficControl'); // удаляем контроль трафика
+	map.controls.remove('typeSelector'); // удаляем тип
+	map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+	map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+	map.controls.remove('rulerControl'); // удаляем контрол правил
+	map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+
+	map.geoObjects.add(placemark);
+}
+ymaps.ready(init);	

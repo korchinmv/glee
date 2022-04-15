@@ -1,0 +1,29 @@
+.contacts-form {
+	&__wrapper {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__form {
+		max-width: 620px;
+	}
+
+	.form-comment__input {
+		width: 300px;
+	}
+}
+
+.map {
+	width: 500px;
+	height: 335px;
+}
+
+[class*="copyrights-pane"] {
+	//скрываем остатки элементов навигации Яндекс на карте
+	display: none !important;
+}
+
+[class*="ground-pane"] {
+	//сделать карту черно-белой
+	filter: grayscale(3);
+}

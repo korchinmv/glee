@@ -1,6 +1,6 @@
 @import "fonts";
 @import "vars";
-@import "mixin";
+@import "mixins";
 @import "reset";
 @import "libs";
 @import "global";
@@ -24,5 +24,8 @@
 @import "components/related-products-slider";
 @import "components/blog-list-page";
 @import "components/blog-details-page";
+@import "components/contacts-promo";
+@import "components/contacts-block";
+@import "components/form-message-map";
 
 @import "components/footer";

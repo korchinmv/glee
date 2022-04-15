@@ -309,23 +309,24 @@
 					</li>
 				</ul>
 
-				<form class="form-comment">
+				<form class="form-comment" action="#">
 					<h4 class="blog-card-list__comments-title">Leave A Comment</h4>
 					<div class="form-comment__box-input">
 						<div class="form-comment__input-container form-comment__input-container--user">
-							<input class="form-comment__input form-comment" type="text" placeholder="Name">
+							<input class="form-comment__input form-comment" type="text" placeholder="Name" required>
 						</div>
 
 						<div class="form-comment__input-container form-comment__input-container--email">
-							<input class="form-comment__input" type="email" placeholder="youremail@gmail.com">
+							<input class="form-comment__input" type="email" placeholder="youremail@gmail.com" required>
 						</div>
 
 					</div>
 
 					<div class="form-comment__textarea-container form-comment__textarea-container--message">
-						<textarea class="form-comment__textarea form-comment__textarea--message" placeholder="Comment"></textarea>
+						<textarea class="form-comment__textarea form-comment__textarea--message" placeholder="Comment"
+							required></textarea>
 					</div>
-					<button class="form-comment__btn btn">Post Comment</button>
+					<button class="form-comment__btn btn" type="submit">Post Comment</button>
 				</form>
 			</article>
 
