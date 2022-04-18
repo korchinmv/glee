@@ -25,6 +25,7 @@ body {
 
 .product-container {
 	max-width: 1170px;
+	padding: 0 15px;
 	margin: 0 auto;
 }
 
@@ -154,6 +155,52 @@ body {
 
 	&:hover {
 		background-color: $blue-300;
+	}
+}
+
+.burger {
+	display: none;
+	position: relative;
+	width: 44px;
+	height: 44px;
+
+	@include mq("desktop-2", max) {
+		display: block;
+	}
+
+	&__line,
+	&:before,
+	&:after {
+		content: "";
+		background-color: $blue-300;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		width: 30px;
+		left: 7px;
+		transition: transform 0.4s;
+	}
+
+	&:before {
+		top: 12px;
+	}
+
+	&:after {
+		bottom: 10px;
+	}
+
+	&--active::before {
+		transform: rotate(45deg);
+		top: 21px;
+	}
+
+	&--active::after {
+		transform: rotate(-45deg);
+		bottom: 21px;
+	}
+
+	&--active .burger__line {
+		transform: scale(0);
 	}
 }
 

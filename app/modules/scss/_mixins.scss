@@ -1,41 +1,42 @@
 $breakpoints: (
-  "desktop-2": 1440px,
-  "desktop": 1230px,
-  "tablet-2": 992px,
-  "tablet": 768px,
-  "phone": 560px,
+	"desktop": 1440px,
+	"desktop-2": 1230px,
+	"tablet": 992px,
+	"tablet-2": 768px,
+	"phone": 560px,
 );
+
 @mixin mq($width, $type: min) {
-  @if map_has_key($breakpoints, $width) {
-    $width: map_get($breakpoints, $width);
-    @if $type == max {
-      $width: $width - 1px;
-    }
-    @media only screen and (#{$type}-width: $width) {
-      @content;
-    }
-  }
+	@if map_has_key($breakpoints, $width) {
+		$width: map_get($breakpoints, $width);
+		@if $type == max {
+			$width: $width - 1px;
+		}
+		@media only screen and (#{$type}-width: $width) {
+			@content;
+		}
+	}
 }
 
 // @include mq('tablet', max)
 
 @mixin line-clamp($lines: 1) {
-  @if $lines <=1 {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  } @else {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: $lines;
-    -webkit-box-orient: vertical;
-  }
+	@if $lines <=1 {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	} @else {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: $lines;
+		-webkit-box-orient: vertical;
+	}
 }
 
 @function max($numbers...) {
-  @return m#{a}x(#{$numbers});
+	@return m#{a}x(#{$numbers});
 }
 @function min($numbers...) {
-  @return m#{i}n(#{$numbers});
+	@return m#{i}n(#{$numbers});
 }

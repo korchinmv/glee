@@ -5,6 +5,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		z-index: 2;
 	}
 
 	&__menu {
@@ -22,14 +23,47 @@
 	display: flex;
 	align-items: center;
 
+	@include mq("desktop-2", max) {
+		position: absolute;
+		background-color: $white;
+		left: 0;
+		right: 0;
+		top: 120px;
+		margin-left: 0;
+		flex-direction: column;
+		transform: translateY(-200%);
+		transition: transform 0.4s;
+		z-index: -1;
+	}
+
+	&--active {
+		transform: translateY(0);
+	}
+
+	&__item {
+		@include mq("desktop-2", max) {
+			width: 100%;
+			text-align: center;
+		}
+	}
+
 	&__item:not(:last-child) {
 		margin-right: 32px;
+
+		@include mq("desktop-2", max) {
+			margin-right: 0;
+		}
 	}
 
 	&__link {
 		font-family: Rubik-Medium;
 		font-weight: 500;
 		transition: color 0.2s;
+
+		@include mq("desktop-2", max) {
+			display: block;
+			padding: 12px 0;
+		}
 
 		&:hover {
 			color: rgba($blue-300, 0.7);
@@ -45,6 +79,10 @@
 	width: 180px;
 	height: 50px;
 	border-radius: 30px;
+
+	@include mq("phone", max) {
+		display: none;
+	}
 
 	&__link {
 		padding: 18px 25px 13px 25px;
@@ -109,6 +147,10 @@
 	}
 
 	&--search {
+		@include mq("phone", max) {
+			display: none;
+		}
+
 		svg {
 			fill: $blue-300;
 		}
@@ -116,6 +158,10 @@
 
 	&--menu {
 		background-color: $blue-100;
+
+		@include mq("desktop-2", max) {
+			display: none;
+		}
 
 		svg {
 			fill: $white;

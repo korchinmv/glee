@@ -1,5 +1,11 @@
 $(function () {
+	const buttonMenu = document.querySelector('.burger');
+	const menuActive = document.querySelector('.menu');
 
+	buttonMenu.onclick = function () {
+		menuActive.classList.toggle('menu--active');
+		buttonMenu.classList.toggle('burger--active');
+	};
 
 	$('.tabs__top-item').on('click', function (e) {   //ТАБЫ//
 		e.preventDefault();  //Отключаем нажатие (переход) по ссылке//
@@ -135,4 +141,5 @@ function init() {
 
 	map.geoObjects.add(placemark);
 }
-ymaps.ready(init);	
+ymaps.ready(init);
+
