@@ -119,13 +119,13 @@
 	justify-content: space-between;
 	align-items: center;
 
-	@include mq("tablet-2", max) {
+	@include mq("tablet-s", max) {
 		flex-direction: column;
 		text-align: center;
 	}
 
 	&__copy {
-		@include mq("tablet-2", max) {
+		@include mq("tablet-s", max) {
 			margin-top: 20px;
 			order: 1;
 		}

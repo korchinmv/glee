@@ -66,6 +66,10 @@ body {
 		display: inline-block;
 		position: relative;
 
+		@include mq("phone", max) {
+			padding: 15px 70px 15px 27px;
+		}
+
 		&::after {
 			content: "";
 			position: absolute;
@@ -74,6 +78,10 @@ body {
 			height: 9px;
 			right: 18px;
 			top: 28px;
+
+			@include mq("phone", max) {
+				top: 20px;
+			}
 		}
 	}
 
@@ -164,7 +172,7 @@ body {
 	width: 44px;
 	height: 44px;
 
-	@include mq("desktop-2", max) {
+	@include mq("desktop-s", max) {
 		display: block;
 	}
 
@@ -209,14 +217,25 @@ body {
 	font-weight: 700;
 	font-size: 36px;
 	color: $blue-700;
+	margin-bottom: 20px;
+
+	@include mq("phone", max) {
+		font-size: 24px;
+	}
 }
 
 .filter-mix {
 	display: flex;
 	justify-content: center;
+	flex-wrap: wrap;
 
-	&__item:not(:last-child) {
-		margin-right: 25px;
+	&__item {
+		margin: 0 13px 0 13px;
+
+		@include mq("phone", max) {
+			flex-direction: column;
+			margin-bottom: 20px;
+		}
 	}
 
 	&__btn {
@@ -920,15 +939,40 @@ body {
 	display: flex;
 	justify-content: space-between;
 	background-color: $beige-50;
-	padding: 100px 145px 100px 390px;
+	padding: 0 145px 0 130px;
 	position: relative;
-	height: 100%;
+	min-height: 390px;
 	max-width: 870px;
 
+	@include mq("tablet-s", max) {
+		min-height: 300px;
+		padding: 15px 145px 15px 50px;
+	}
+
+	@include mq("phone", max) {
+		padding: 20px;
+		max-width: 100%;
+		min-height: 180px;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
 	&__img {
-		position: absolute;
-		top: -95px;
-		left: 130px;
+		margin: -100px 30px 0 0;
+
+		@include mq("tablet-s", max) {
+			width: 150px;
+			height: 330px;
+			margin-top: -50px;
+		}
+
+		@include mq("phone", max) {
+			display: none;
+		}
 	}
 
 	&__title {
@@ -938,7 +982,11 @@ body {
 		line-height: 1.2;
 		color: $blue-700;
 		margin-bottom: 30px;
-		@include line-clamp(2);
+		@include line-clamp(3);
+
+		@include mq("phone", max) {
+			margin-bottom: 20px;
+		}
 	}
 
 	&__text {
@@ -947,6 +995,12 @@ body {
 		line-height: 1.8;
 		max-width: 340px;
 		@include line-clamp(5);
+
+		@include mq("phone", max) {
+			line-height: 1.2;
+			margin-bottom: 20px;
+			display: none;
+		}
 	}
 }
 
@@ -959,6 +1013,11 @@ body {
 	background-repeat: no-repeat;
 	background-position: center center;
 	position: relative;
+
+	@include mq("phone", max) {
+		width: 290px;
+		min-height: 190px;
+	}
 
 	&__link {
 		position: absolute;
@@ -998,6 +1057,11 @@ body {
 
 	&__img {
 		object-fit: cover;
+
+		@include mq("phone", max) {
+			width: 100%;
+			border-radius: 5px 5px 0 0;
+		}
 	}
 
 	&__badge {

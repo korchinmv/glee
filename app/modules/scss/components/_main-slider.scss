@@ -1,67 +1,121 @@
 .main-slider {
-  &__wrapper {
-    background-color: $beige-200;
-    padding-bottom: 45px;
-  }
+	&__wrapper {
+		background-color: $beige-200;
+		padding-bottom: 45px;
+	}
 
-  &__inner {
-    margin: 225px 0 0 300px;
-  }
+	&__inner {
+		margin: 225px 0 0 300px;
 
-  &__title {
-    font-size: 72px;
-    color: $blue-800;
-    max-width: 470px;
-    font-family: Rubik-Medium;
-    font-weight: 500;
-    margin-bottom: 40px;
-    text-transform: uppercase;
-  }
+		@include mq("desktop", max) {
+			margin-left: 50px;
+		}
 
-  &__text {
-    max-width: 370px;
-    color: $blue-300;
-    font-size: 18px;
-    line-height: 1.6;
-    margin-bottom: 40px;
-  }
+		@include mq("desktop-s", max) {
+			margin-top: 100px;
+		}
 
-  &__item {
-    display: flex !important;
-    justify-content: space-between;
-  }
+		@include mq("tablet", max) {
+			margin-top: 50px;
+		}
 
-  &__img {
-    margin: 100px 185px 22px 0;
-    background-repeat: no-repeat;
-    background-position: center center;
-    object-fit: contain;
-  }
+		@include mq("phone", max) {
+			margin: 50px 20px 0 20px;
+		}
+	}
 
-  .slick-dots {
-    display: flex;
-    justify-content: center;
-    margin-top: -10px;
+	&__title {
+		font-size: 72px;
+		color: $blue-800;
+		max-width: 470px;
+		font-family: Rubik-Medium;
+		font-weight: 500;
+		margin-bottom: 40px;
+		text-transform: uppercase;
 
-    li {
-      margin: 0 9px;
+		@include mq("desktop-s", max) {
+			font-size: 66px;
+		}
 
-      button {
-        font-family: Rubik-Medium;
-        font-weight: 500;
-        background-color: $beige-150;
-        border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
-      }
+		@include mq("tablet", max) {
+			font-size: 54px;
+			margin-bottom: 20px;
+		}
 
-      &.slick-active {
-        button {
-          color: $blue-800;
-          background-color: $white;
-        }
-      }
-    }
-  }
+		@include mq("phone", max) {
+			font-size: 28px;
+		}
+	}
+
+	&__text {
+		max-width: 370px;
+		color: $blue-300;
+		font-size: 18px;
+		line-height: 1.6;
+		margin-bottom: 40px;
+
+		@include mq("phone", max) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__item {
+		display: flex !important;
+		justify-content: space-between;
+		z-index: -10;
+	}
+
+	&__img {
+		width: 755px;
+		height: 634px;
+		margin: 100px 185px 22px 0;
+		background-repeat: no-repeat;
+		background-position: center center;
+		object-fit: contain;
+
+		@include mq("desktop", max) {
+			margin: 100px 50px 22px 0;
+		}
+
+		@include mq("desktop-s", max) {
+			width: 500px;
+			height: 500px;
+			margin: 20px 50px 22px 0;
+		}
+
+		@include mq("tablet", max) {
+			display: none !important;
+		}
+	}
+
+	.slick-dots {
+		display: flex;
+		justify-content: center;
+		margin-top: -10px;
+
+		@include mq("tablet", max) {
+			margin-top: 25px;
+		}
+
+		li {
+			margin: 0 9px;
+
+			button {
+				font-family: Rubik-Medium;
+				font-weight: 500;
+				background-color: $beige-150;
+				border-radius: 50%;
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+			}
+
+			&.slick-active {
+				button {
+					color: $blue-800;
+					background-color: $white;
+				}
+			}
+		}
+	}
 }

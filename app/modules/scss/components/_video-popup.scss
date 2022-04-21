@@ -1,9 +1,19 @@
 .video-popup {
 	position: relative;
+	color: #fff;
+
 	&__img {
 		background-repeat: no-repeat;
-		object-fit: contain;
+		object-fit: cover;
 		background-position: center center;
+
+		@include mq("tablet", max) {
+			height: 250px;
+		}
+
+		@include mq("phone", max) {
+			height: 200px;
+		}
 	}
 
 	&__link {
@@ -17,5 +27,11 @@
 			transform: scale(1.2) translate(-43%, -50%);
 		}
 	}
-	color: #fff;
+
+	&__img-btn {
+		@include mq("phone", max) {
+			width: 70px;
+			height: 70px;
+		}
+	}
 }

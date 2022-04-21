@@ -1,5 +1,9 @@
 .design {
-	padding: 100px 0 85px;
+	padding: 100px 0;
+
+	@include mq("tablet", max) {
+		padding: 20px 0;
+	}
 
 	&__title {
 		text-align: center;
@@ -7,6 +11,10 @@
 
 	&__filter {
 		margin-bottom: 75px;
+
+		@include mq("phone", max) {
+			margin-bottom: 10px;
+		}
 	}
 
 	&__list {
@@ -18,5 +26,9 @@
 
 	&__item {
 		margin: 0 15px 35px 15px;
+
+		@include mq("phone", max) {
+			margin-bottom: 20px;
+		}
 	}
 }

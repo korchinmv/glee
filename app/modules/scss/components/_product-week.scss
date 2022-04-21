@@ -2,8 +2,20 @@
 	padding: 70px 190px;
 	text-align: center;
 
+	@include mq("tablet", max) {
+		padding: 40px 60px;
+	}
+
 	&__filter {
 		margin-bottom: 70px;
+
+		@include mq("tablet", max) {
+			margin-bottom: 40px;
+		}
+
+		@include mq("phone", max) {
+			margin-bottom: 20px;
+		}
 	}
 
 	&__wrapper {
@@ -15,6 +27,6 @@
 
 	&__item {
 		width: 270px;
-		margin: 20px 15px;
+		margin: 0 10px 20px 10px;
 	}
 }

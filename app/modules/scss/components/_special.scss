@@ -1,14 +1,49 @@
 .special {
-  padding: 185px 0 100px;
+	padding: 185px 0 50px;
 
-  &__list {
-    display: flex;
-    justify-content: space-between;
-  }
+	@include mq("tablet-s", max) {
+		padding-top: 100px;
+		padding-bottom: 100px;
+	}
 
-  &__item {
-    &:not(:last-child) {
-      margin-right: 30px;
-    }
-  }
+	@include mq("phone", max) {
+		padding-top: 10px;
+		padding-bottom: 40px;
+	}
+
+	&__list {
+		display: flex;
+		justify-content: space-between;
+
+		@include mq("desktop", max) {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		@include mq("phone", max) {
+			flex-direction: column;
+		}
+	}
+
+	&__item {
+		@include mq("phone", max) {
+			width: 100%;
+		}
+
+		&:not(:last-child) {
+			margin: 0 30px 0 0;
+
+			@include mq("desktop", max) {
+				margin: 0 0 150px 0;
+			}
+
+			@include mq("tablet-s", max) {
+				margin-bottom: 120px;
+			}
+
+			@include mq("phone", max) {
+				margin-bottom: 30px;
+			}
+		}
+	}
 }

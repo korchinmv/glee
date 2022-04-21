@@ -1,68 +1,113 @@
 .support {
-  &__list {
-    display: flex;
-    justify-content: space-between;
-    background-color: $beige;
-  }
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		background-color: $beige;
 
-  &__item {
-    padding: 45px 145px 45px 220px;
-    position: relative;
+		@include mq("desktop", max) {
+			justify-content: space-evenly;
+		}
 
-    &:after {
-      content: "";
-      position: absolute;
-      display: block;
-      height: 100%;
-      width: 1px;
-      background-color: $grey-200;
-      right: 0;
-      top: 0;
-    }
+		@include mq("tablet-s", max) {
+			flex-wrap: wrap;
+		}
+	}
 
-    &:before {
-      content: "";
-      position: absolute;
-      top: 60px;
-      left: 140px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
+	&__item {
+		padding: 20px 150px 20px 220px;
+		position: relative;
+		min-height: 170px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 
-    &--icon-time::before {
-      background-image: url(../images/icons/icon-time.svg);
-      width: 51px;
-      height: 53px;
-    }
+		@include mq("desktop", max) {
+			padding: 20px 50px 20px 100px;
+		}
 
-    &--icon-car::before {
-      background-image: url(../images/icons/icon-car.svg);
-      width: 54px;
-      height: 36px;
-    }
+		@include mq("tablet", max) {
+			padding: 20px;
+		}
 
-    &--icon-payment::before {
-      background-image: url(../images/icons/icon-payment.svg);
-      width: 54px;
-      height: 52px;
-    }
-  }
+		@include mq("tablet-s", max) {
+			width: 100%;
+			padding-left: 50px;
+		}
 
-  &__title {
-    font-family: DMSans-Bold;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 2.2;
-    @include line-clamp(3);
-  }
+		@include mq("phone", max) {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
 
-  &__text {
-    font-family: DMSans-Regular;
-    font-weight: 400;
-    color: $grey-500;
-    line-height: 1.8;
-    max-width: 209px;
-    @include line-clamp(3);
-  }
+		&:not(:last-child)::after {
+			content: "";
+			position: absolute;
+			display: block;
+			height: 100%;
+			width: 1px;
+			background-color: $grey-200;
+			right: 0;
+			bottom: 0;
+
+			@include mq("tablet-s", max) {
+				bottom: 0;
+				width: 100%;
+				height: 1px;
+			}
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 140px;
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+
+			@include mq("desktop", max) {
+				left: 0;
+			}
+
+			@include mq("desktop-s", max) {
+				display: none;
+			}
+		}
+
+		&--icon-time::before {
+			background-image: url(../images/icons/icon-time.svg);
+			width: 51px;
+			height: 53px;
+		}
+
+		&--icon-car::before {
+			background-image: url(../images/icons/icon-car.svg);
+			width: 54px;
+			height: 36px;
+		}
+
+		&--icon-payment::before {
+			background-image: url(../images/icons/icon-payment.svg);
+			width: 54px;
+			height: 52px;
+		}
+	}
+
+	&__title {
+		font-family: DMSans-Bold;
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 2.2;
+		@include line-clamp(3);
+	}
+
+	&__text {
+		font-family: DMSans-Regular;
+		font-weight: 400;
+		color: $grey-500;
+		line-height: 1.8;
+		max-width: 209px;
+		@include line-clamp(3);
+	}
 }
