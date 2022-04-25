@@ -2,20 +2,41 @@
 	&__wrapper {
 		display: flex;
 		justify-content: space-between;
+
+		@include mq("desktop-s", max) {
+			display: block;
+		}
 	}
 
 	&__form {
 		max-width: 620px;
+
+		@include mq("desktop-s", max) {
+			max-width: 100%;
+			margin-bottom: 30px;
+		}
 	}
 
 	.form-comment__input {
 		width: 300px;
+
+		@include mq("desktop-s", max) {
+			width: 100%;
+		}
 	}
 }
 
 .map {
 	width: 500px;
 	height: 335px;
+
+	@include mq("desktop-s", max) {
+		width: 100%;
+	}
+
+	@include mq("phone", max) {
+		height: 250px;
+	}
 }
 
 [class*="copyrights-pane"] {

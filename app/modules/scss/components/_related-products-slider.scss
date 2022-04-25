@@ -1,6 +1,18 @@
 .related-products {
+	@include mq("tablet", max) {
+		margin-bottom: 30px;
+	}
+
 	&__title {
 		margin-bottom: 60px;
+
+		@include mq("tablet", max) {
+			margin-bottom: 40px;
+		}
+
+		@include mq("phone", max) {
+			margin-bottom: 20px;
+		}
 	}
 
 	&__list {

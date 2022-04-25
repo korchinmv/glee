@@ -58,6 +58,35 @@ body {
 	transition: background-color 0.3s;
 	border: 2px solid transparent;
 
+	&--filter {
+		padding: 12px 12px;
+		cursor: pointer;
+		position: fixed;
+
+		z-index: 5;
+		display: none;
+
+		@include mq("desktop-s", max) {
+			display: block;
+			top: 370px;
+			right: 10px;
+		}
+
+		@include mq("tablet", max) {
+			top: 330px;
+		}
+
+		@include mq("phone", max) {
+			top: 255px;
+		}
+
+		svg {
+			width: 20px;
+			height: 20px;
+			fill: $white;
+		}
+	}
+
 	&--main-slider {
 		padding: 23px 100px 23px 27px;
 		font-family: Rubik-Medium;
@@ -316,6 +345,10 @@ body {
 
 	&__item {
 		margin-right: 16px;
+
+		@include mq("phone", max) {
+			margin-right: 10px;
+		}
 	}
 
 	&__link {
@@ -323,6 +356,10 @@ body {
 		border: 1px solid $blue-100;
 		padding: 15px 19px;
 		transition: background-color 0.2s;
+
+		@include mq("phone", max) {
+			padding: 10px 14px;
+		}
 
 		&:hover {
 			background-color: $blue-50;
@@ -343,6 +380,10 @@ body {
 		padding: 15px 19px;
 		transition: background-color 0.2s;
 
+		@include mq("phone", max) {
+			padding: 10px 14px;
+		}
+
 		&:hover {
 			background-color: $blue-50;
 		}
@@ -360,12 +401,20 @@ body {
 	align-items: center;
 	position: relative;
 
+	@include mq("tablet-s", max) {
+		width: 100%;
+	}
+
 	&__input {
 		width: 250px;
 		height: 40px;
 		border: 1px solid $blue-50;
 		border-radius: 5px;
 		padding: 0 35px 0 15px;
+
+		@include mq("tablet-s", max) {
+			width: 100%;
+		}
 	}
 
 	&__btn {
@@ -405,7 +454,7 @@ body {
 .author {
 	display: flex;
 	justify-content: space-between;
-	max-height: 125px;
+	min-height: 125px;
 	padding: 24px 0;
 	border: 2px solid $grey-200;
 	border-left: none;
@@ -528,10 +577,26 @@ body {
 		display: flex;
 		justify-content: space-between;
 		margin-bottom: 20px;
+
+		@include mq("tablet-s", max) {
+			display: block;
+		}
 	}
 
 	&__input-container {
 		position: relative;
+
+		@include mq("desktop-s", max) {
+			width: 100%;
+		}
+
+		&:not(:last-child) {
+			margin-right: 20px;
+
+			@include mq("tablet-s", max) {
+				margin-bottom: 20px;
+			}
+		}
 
 		input {
 			width: 400px;
@@ -604,6 +669,10 @@ body {
 		margin-bottom: 40px;
 		position: relative;
 
+		@include mq("tablet-s", max) {
+			margin-bottom: 20px;
+		}
+
 		&:focus {
 			outline: transparent;
 			border-color: $blue-100;
@@ -622,14 +691,34 @@ body {
 	align-items: center;
 	text-align: center;
 
+	@include mq("tablet-s", max) {
+		display: block;
+	}
+
 	&__item {
 		max-width: 370px;
 		width: 100%;
-		height: 380px;
+		min-height: 380px;
 		background-color: $grey-100;
-		padding: 70px 25px 25px 25px;
+		padding: 75px 25px 25px 25px;
 		border: 3px solid transparent;
 		transition: border 0.2s;
+
+		@include mq("tablet", max) {
+			padding: 40px 10px 10px 10px;
+			min-height: 300px;
+		}
+
+		@include mq("tablet-s", max) {
+			max-width: 100%;
+			min-height: 120px;
+			padding-bottom: 40px;
+		}
+
+		@include mq("phone", max) {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
 
 		&:hover {
 			border: 3px solid $blue-75;
@@ -645,6 +734,10 @@ body {
 
 		&:not(:last-child) {
 			margin-right: 30px;
+
+			@include mq("tablet-s", max) {
+				margin-bottom: 20px;
+			}
 		}
 	}
 
@@ -659,6 +752,14 @@ body {
 		border-radius: 20px;
 		box-shadow: 0px 6px 57px 0px rgba(37, 37, 37, 0.05);
 		transition: background-color 0.2s;
+
+		@include mq("tablet", max) {
+			margin-bottom: 20px;
+		}
+
+		@include mq("tablet-s", max) {
+			display: none;
+		}
 	}
 
 	svg {
@@ -673,6 +774,14 @@ body {
 		font-size: 20px;
 		color: $dark;
 		margin-bottom: 20px;
+
+		@include mq("tablet-s", max) {
+			margin-bottom: 10px;
+		}
+
+		@include mq("phone", max) {
+			margin-bottom: 5px;
+		}
 	}
 
 	&__link,
@@ -779,10 +888,10 @@ body {
 //CARDS//
 .product-card {
 	height: 380px;
-	width: 270px;
+	max-width: 270px;
 	box-shadow: 0px 6px 47px 3px rgba($dark-500, 0.05);
 	border-radius: 10px;
-	padding: 25px 15px 40px;
+	padding: 25px 40px 40px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -793,8 +902,8 @@ body {
 
 	&.product-card--list {
 		box-shadow: none;
-		width: 100%;
-		height: 500px;
+		max-width: 100%;
+		min-height: 500px;
 		text-align: left;
 		padding: 0;
 
@@ -813,11 +922,21 @@ body {
 			font-size: 40px;
 			color: $dark;
 			margin-bottom: 25px;
+
+			@include mq("desktop-s", max) {
+				font-size: 34px;
+				margin-bottom: 15px;
+				line-height: 1;
+			}
 		}
 
 		.star {
 			display: block;
 			margin-bottom: 30px;
+
+			@include mq("desktop", max) {
+				margin-bottom: 10px;
+			}
 
 			svg {
 				width: 18px;
@@ -832,6 +951,10 @@ body {
 			font-size: 30px;
 			color: $dark;
 			margin-bottom: 30px;
+
+			@include mq("desktop", max) {
+				margin-bottom: 10px;
+			}
 		}
 
 		.product-card__descr {
@@ -850,6 +973,10 @@ body {
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
+			@include mq("desktop-s", max) {
+				margin-right: 30px;
+			}
 		}
 
 		.product-card__img {
@@ -1058,7 +1185,7 @@ body {
 	&__img {
 		object-fit: cover;
 
-		@include mq("phone", max) {
+		@include mq("tablet-s", max) {
 			width: 100%;
 			border-radius: 5px 5px 0 0;
 		}
@@ -1104,6 +1231,10 @@ body {
 		display: flex;
 		padding-top: 15px;
 		border-top: 1px solid $grey-250;
+
+		@include mq("phone", max) {
+			display: block;
+		}
 	}
 
 	&__date,
@@ -1111,6 +1242,10 @@ body {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
+		@include mq("phone", max) {
+			justify-content: start;
+		}
 
 		svg {
 			width: 15px;
@@ -1121,6 +1256,11 @@ body {
 	}
 	&__date {
 		margin-right: 30px;
+
+		@include mq("phone", max) {
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
 	}
 
 	&__author {
@@ -1236,6 +1376,15 @@ body {
 		font-size: 36px;
 		color: $dark;
 		margin-bottom: 15px;
+
+		@include mq("tablet-s", max) {
+			font-size: 30px;
+		}
+
+		@include mq("phone", max) {
+			font-size: 28px;
+			margin-bottom: 10px;
+		}
 	}
 
 	span {
@@ -1258,6 +1407,10 @@ body {
 		border-left: 6px solid $blue-100;
 		padding: 20px 110px 20px 35px;
 		margin: 20px 0 40px;
+
+		@include mq("tablet-s", max) {
+			padding: 20px 20px 20px 35px;
+		}
 
 		p {
 			margin-bottom: 15px;
@@ -1284,19 +1437,55 @@ body {
 
 	h3 {
 		margin: 25px 0 25px;
+
+		@include mq("tablet", max) {
+			font-size: 32px;
+		}
+
+		@include mq("phone", max) {
+			font-size: 24px;
+			margin: 15px 0 15px;
+		}
+	}
+
+	.author {
+		@include mq("tablet", max) {
+			display: block;
+			padding-bottom: 8px;
+		}
+
+		&__img-box {
+			@include mq("tablet", max) {
+				margin-bottom: 10px;
+			}
+		}
 	}
 
 	&__author-box {
 		margin-bottom: 65px;
+
+		@include mq("tablet", max) {
+			margin-bottom: 40px;
+		}
 	}
 
 	&__img-wrapper {
 		display: flex;
+
+		@include mq("tablet", max) {
+			display: block;
+		}
 	}
 
 	&__img-left {
 		object-fit: contain;
 		margin-right: 30px;
+
+		@include mq("tablet", max) {
+			object-fit: cover;
+			margin-right: 0;
+			width: 100%;
+		}
 	}
 
 	&__wrapper {
@@ -1306,10 +1495,19 @@ body {
 	&__img-link {
 		display: block;
 		margin-bottom: 35px;
+
+		@include mq("phone", max) {
+			margin-bottom: 20px;
+		}
 	}
 
 	&__img {
 		object-fit: cover;
+
+		@include mq("tablet", max) {
+			height: 300px;
+			width: 100%;
+		}
 	}
 
 	&__box-date {
@@ -1323,6 +1521,10 @@ body {
 		align-items: center;
 		left: 0;
 		bottom: 0;
+
+		@include mq("phone", max) {
+			height: 50px;
+		}
 	}
 
 	&__author {
@@ -1349,6 +1551,12 @@ body {
 	&__descr {
 		line-height: 1.8;
 		margin-bottom: 30px;
+
+		p {
+			@include mq("phone", max) {
+				line-height: 1.4;
+			}
+		}
 	}
 
 	&__btn {
@@ -1377,6 +1585,10 @@ body {
 
 	&__comments {
 		margin-bottom: 60px;
+
+		@include mq("phone", max) {
+			margin-bottom: 20px;
+		}
 	}
 
 	&__comments-title {
@@ -1385,6 +1597,10 @@ body {
 		font-size: 24px;
 		color: $blue-800;
 		margin-bottom: 40px;
+
+		@include mq("tablet", max) {
+			margin-bottom: 20px;
+		}
 
 		.num {
 			display: inline-block;
@@ -1401,11 +1617,59 @@ body {
 
 		&--answer {
 			margin-left: 130px;
+
+			@include mq("tablet-s", max) {
+				margin-left: 50px;
+			}
+		}
+	}
+
+	.comment {
+		&__top {
+			@include mq("tablet", max) {
+				display: block;
+			}
+		}
+
+		&__name {
+			@include mq("tablet", max) {
+				margin-bottom: 10px;
+			}
+		}
+
+		&__img {
+			@include mq("tablet", max) {
+				display: none;
+			}
+		}
+	}
+
+	.form-comment {
+		&__box-input {
+			@include mq("desktop-s", max) {
+				display: block;
+			}
+		}
+
+		&__input {
+			@include mq("desktop-s", max) {
+				width: 100%;
+			}
+		}
+
+		&__input-container {
+			&:not(:last-child) {
+				margin-bottom: 20px;
+			}
 		}
 	}
 }
 
 .recent-post {
+	@include mq("tablet-s", max) {
+		display: none;
+	}
+
 	&__item {
 		display: flex;
 		align-items: center;
@@ -1461,6 +1725,10 @@ body {
 //FILTERS//
 .filter-category {
 	width: 270px;
+
+	@include mq("tablet-s", max) {
+		display: none;
+	}
 
 	&__label {
 		cursor: pointer;

@@ -1,5 +1,13 @@
 .product-page {
 	padding: 120px 0 115px;
+
+	@include mq("tablet", max) {
+		padding: 80px 0;
+	}
+
+	@include mq("phone", max) {
+		padding: 40px 0;
+	}
 }
 
 .product-one {
@@ -7,22 +15,48 @@
 		display: flex;
 		align-items: center;
 		margin-bottom: 80px;
+
+		@include mq("tablet-s", max) {
+			display: block;
+			margin-bottom: 50px;
+		}
 	}
 
 	&__slide {
 		width: 550px;
 		display: flex;
 		margin-right: 70px;
+
+		@include mq("desktop-s", max) {
+			width: 100%;
+		}
 	}
 
 	&__title {
 		font-size: 40px;
 		color: $dark-500;
 		margin-bottom: 15px;
+
+		@include mq("tablet", max) {
+			font-size: 34px;
+			margin-bottom: 10px;
+		}
+
+		@include mq("tablet-s", max) {
+			font-size: 26px;
+		}
+
+		@include mq("phone", max) {
+			font-size: 22px;
+		}
 	}
 
 	.star {
 		margin: 0 0 35px -5px;
+
+		@include mq("tablet", max) {
+			margin-bottom: 20px;
+		}
 
 		svg {
 			width: 18px;
@@ -36,16 +70,37 @@
 		font-size: 30px;
 		color: $dark-500;
 		margin-bottom: 25px;
+
+		@include mq("tablet", max) {
+			margin-bottom: 10px;
+		}
+
+		@include mq("tablet-s", max) {
+			font-size: 24px;
+		}
 	}
 
 	&__descr {
 		line-height: 1.8;
 		margin-bottom: 20px;
+
+		@include mq("tablet-s", max) {
+			margin-bottom: 10px;
+		}
 	}
 
 	&__btn {
 		text-transform: uppercase;
 		margin-bottom: 50px;
+
+		@include mq("tablet", max) {
+			margin-top: 30px;
+		}
+
+		@include mq("phone", max) {
+			padding: 12px 30px;
+			margin-bottom: 20px;
+		}
 	}
 
 	&__stepper {
@@ -54,6 +109,10 @@
 
 	&__tabs {
 		margin-bottom: 115px;
+
+		@include mq("tablet", max) {
+			margin-bottom: 50px;
+		}
 	}
 }
 
@@ -68,6 +127,10 @@
 	&__thumb {
 		width: 140px;
 		margin-right: 25px;
+
+		@include mq("desktop-s", max) {
+			display: none;
+		}
 	}
 
 	&__thumb-item {
@@ -85,6 +148,13 @@
 
 	&__big {
 		width: 390px;
+
+		@include mq("tablet-s", max) {
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 20px;
+			width: 250px;
+		}
 	}
 
 	&__big-item {
@@ -93,11 +163,21 @@
 		height: 530px;
 		position: relative;
 
+		@include mq("phone", max) {
+			width: 250px;
+			height: 330px;
+		}
+
 		img {
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
+
+			@include mq("phone", max) {
+				width: 150px;
+				height: 250px;
+			}
 		}
 	}
 }
@@ -106,6 +186,10 @@
 	&__top {
 		display: flex;
 		justify-content: center;
+
+		@include mq("tablet", max) {
+			display: block;
+		}
 	}
 
 	&__top-item {
@@ -114,12 +198,22 @@
 		margin-bottom: 30px;
 		cursor: pointer;
 
+		@include mq("tablet", max) {
+			&:not(:last-child) {
+				margin-bottom: 10px;
+			}
+		}
+
 		&:hover {
 			background-color: $blue-100;
 		}
 
 		& + .tabs__top-item {
 			margin-left: 13px;
+
+			@include mq("tablet", max) {
+				margin-left: 0;
+			}
 		}
 
 		&.tabs__top-item--active {

@@ -1,22 +1,52 @@
 .blog-list {
 	padding: 120px 0;
 
+	@include mq("tablet", max) {
+		padding: 80px 0;
+	}
+
+	@include mq("phone", max) {
+		padding: 40px 0;
+	}
+
 	&__wrapper {
 		display: flex;
 		margin-bottom: 25px;
+
+		@include mq("tablet-s", max) {
+			flex-direction: column;
+		}
 	}
 
 	&__content {
 		width: 830px;
+
+		@include mq("tablet-s", max) {
+			width: 100%;
+		}
 	}
 
 	&__aside {
 		width: 270px;
 		margin-left: 70px;
+
+		@include mq("tablet", max) {
+			margin-left: 40px;
+		}
+
+		@include mq("tablet-s", max) {
+			order: -1;
+			margin-left: 0;
+			width: 100%;
+		}
 	}
 
 	&__item {
 		margin-bottom: 50px;
+
+		@include mq("phone", max) {
+			margin-bottom: 30px;
+		}
 	}
 
 	&__pagination {
@@ -25,5 +55,9 @@
 
 	&__search {
 		margin-bottom: 55px;
+
+		@include mq("phone", max) {
+			margin-bottom: 40px;
+		}
 	}
 }

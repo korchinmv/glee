@@ -2,16 +2,33 @@
 	padding-top: 120px;
 	line-height: 1.8;
 
+	@include mq("tablet-s", max) {
+		padding-top: 80px;
+	}
+
+	@include mq("phone", max) {
+		padding-top: 40px;
+	}
+
 	&__title {
 		font-family: Rubik-Medium;
 		font-weight: 500;
 		font-size: 24px;
 		color: $blue-800;
 		margin-bottom: 30px;
+
+		@include mq("phone", max) {
+			margin-bottom: 20px;
+			line-height: 1;
+		}
 	}
 
 	&__list {
 		margin-bottom: 60px;
+
+		@include mq("phone", max) {
+			margin-bottom: 40px;
+		}
 	}
 
 	&__item {

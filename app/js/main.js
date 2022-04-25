@@ -21,6 +21,27 @@ $(function () {
 		infinite: 'false',
 		prevArrow: '<button type="button" class="related-products__slick-prev"><svg><use xlink:href="images/sprite.svg#icon-arrow"></use></svg></button>',
 		nextArrow: '<button type="button" class="related-products__slick-next"><svg><use xlink:href="images/sprite.svg#icon-arrow"></use></svg></button>',
+		responsive: [
+			{
+				breakpoint: 1230,
+				settings: {
+					slidesToShow: 3,
+				}
+			},
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1,
+					arrows: false
+				}
+			},
+		]
 	});
 
 	$('.product-slide__thumb').slick({
@@ -38,6 +59,14 @@ $(function () {
 		arrows: false,
 		fade: true,
 		draggable: false,
+		responsive: [
+			{
+				breakpoint: 1230,
+				settings: {
+					draggable: true
+				}
+			}
+		]
 	});
 
 	$('.filter-price__input').ionRangeSlider({
@@ -74,6 +103,10 @@ $(function () {
 		$('.product-card').removeClass('product-card--list');
 		$('.shop-content__item').removeClass('shop-content__item--list');
 		$('.pagination').removeClass('pagination--list');
+	});
+
+	$('.btn--filter').on('click', function () {
+		$('.shop__filters').slideToggle();
 	});
 
 	$('.stepper').styler();

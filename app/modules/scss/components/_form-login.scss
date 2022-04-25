@@ -4,6 +4,14 @@
 	font-size: 14px;
 	padding: 120px 0;
 
+	@include mq("tablet", max) {
+		padding: 80px 0;
+	}
+
+	@include mq("phone", max) {
+		padding: 40px 15px;
+	}
+
 	&__label {
 		display: block;
 		margin-bottom: 30px;
@@ -30,6 +38,17 @@
 	&__box {
 		display: flex;
 		justify-content: space-between;
+
+		@include mq("phone", max) {
+			display: block;
+			margin-bottom: 10px;
+		}
+
+		.login-form__label {
+			@include mq("phone", max) {
+				margin-bottom: 10px;
+			}
+		}
 	}
 
 	&__text {

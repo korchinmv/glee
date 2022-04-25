@@ -2,6 +2,14 @@
 	padding: 115px 0 120px;
 	text-align: center;
 
+	@include mq("desktop-s", max) {
+		padding: 80px 0 70px;
+	}
+
+	@include mq("tablet", max) {
+		padding: 60px 0 50px;
+	}
+
 	&__subtitle {
 		color: $blue-100;
 		margin-bottom: 15px;
@@ -9,5 +17,9 @@
 
 	&__title {
 		margin-bottom: 65px;
+
+		@include mq("tablet", max) {
+			margin-bottom: 45px;
+		}
 	}
 }

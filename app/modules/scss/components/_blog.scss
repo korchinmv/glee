@@ -11,6 +11,10 @@
 		align-items: baseline;
 		margin-bottom: 45px;
 
+		@include mq("desktop", max) {
+			display: block;
+		}
+
 		@include mq("phone", max) {
 			flex-wrap: wrap;
 			margin-bottom: 25px;
@@ -67,8 +71,11 @@
 			margin: 0 30px 30px 30px;
 		}
 
-		@include mq("phone", max) {
+		@include mq("tablet-s", max) {
 			max-width: 100%;
+		}
+
+		@include mq("phone", max) {
 			margin: 0 0 30px 0;
 		}
 	}
