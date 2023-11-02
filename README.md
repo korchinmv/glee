@@ -8,7 +8,7 @@
 - BEM
 - Gulp
 - адаптивная верстка
-- [Ссылка на проект] https://korchinmv.github.io/glee/
+- [Ссылка на проект] https://korchinmv.github.io/glee/app
 
 **О проекте**
 
